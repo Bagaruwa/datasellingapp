@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f4">
+    <meta name="description" content="Discover responsibly shared, analysis-ready datasets from independent creators.">
+    <title>Fieldnotes — Data, with provenance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Fieldnotes home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>fieldnotes<span class="brand-period">.</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#discover">Explore</a>
+        <a class="nav-link" href="#how-it-works">How it works</a>
+      </nav>
+      <div class="top-actions">
+        <button class="text-button" id="saved-button" type="button">Saved <span class="saved-count" id="saved-count">0</span></button>
+        <button class="button button-dark button-small" id="sell-button" type="button">＋ <span>Sell data</span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="discover">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> A better place to find data</div>
+          <h1>Good data.<br><span>Clear origins.</span></h1>
+          <p>Discover thoughtfully collected datasets from people who know their subject best.</p>
+          <form class="search-bar" id="search-form" role="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+            <label class="sr-only" for="search-input">Search datasets</label>
+            <input id="search-input" type="search" placeholder="Try “urban gardens” or “mobility”" autocomplete="off">
+            <button type="submit" class="button button-dark">Search</button>
+          </form>
+          <div class="hero-footnote"><span class="tiny-shield" aria-hidden="true">✓</span> Every listing includes its source and license</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-card">
+            <div class="art-card-top"><span class="art-label">FIELD STUDY · 2024</span><span class="art-dots">•••</span></div>
+            <div class="art-visual">
+              <span class="art-sun"></span>
+              <span class="art-hill hill-back"></span>
+              <span class="art-hill hill-front"></span>
+              <span class="art-stem stem-one"></span><span class="art-stem stem-two"></span>
+              <span class="art-leaf leaf-one"></span><span class="art-leaf leaf-two"></span><span class="art-leaf leaf-three"></span>
+            </div>
+            <div class="art-card-bottom"><span>Community gardens</span><span class="art-data">2.4k rows ↗</span></div>
+          </div>
+          <div class="art-note"><span class="note-check">✓</span><span><b>Source verified</b><small>Collected by real people</small></span></div>
+          <div class="art-stamp">OPEN<br>DATA<br><span>↗</span></div>
+        </div>
+        <div class="hero-bottom">
+          <span>MADE FOR CURIOUS MINDS</span>
+          <div class="topic-marquee"><span>Climate</span><i>✳</i><span>Culture</span><i>✳</i><span>Places</span><i>✳</i><span>People</span></div>
+          <span class="hero-index">01 — 04</span>
+        </div>
+      </section>
+
+      <section class="market-section" aria-labelledby="market-title">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow section-eyebrow"><span class="eyebrow-dot"></span> THE MARKETPLACE</div>
+            <h2 id="market-title">Find your next <span>aha.</span></h2>
+          </div>
+          <button type="button" class="sort-button" id="sort-button" aria-label="Sort datasets by newest first">Newest first <span aria-hidden="true">⌄</span></button>
+        </div>
+
+        <div class="market-layout">
+          <aside class="filters" aria-label="Filter datasets">
+            <div class="filter-head"><span>Browse</span><button type="button" id="clear-filters">Clear</button></div>
+            <div class="filter-group">
+              <h3>Categories</h3>
+              <label class="filter-option"><input type="radio" name="category" value="all" checked><span class="custom-radio"></span><span>All datasets</span><span class="filter-count">6</span></label>
+              <label class="filter-option"><input type="radio" name="category" value="climate"><span class="custom-radio"></span><span>Climate & nature</span></label>
+              <label class="filter-option"><input type="radio" name="category" value="culture"><span class="custom-radio"></span><span>Culture & community</span></label>
+              <label class="filter-option"><input type="radio" name="category" value="cities"><span class="custom-radio"></span><span>Cities & places</span></label>
+              <label class="filter-option"><input type="radio" name="category" value="business"><span class="custom-radio"></span><span>Business & economy</span></label>
+            </div>
+            <div class="filter-separator"></div>
+            <div class="filter-group">
+              <h3>Price</h3>
+              <label class="filter-option"><input type="radio" name="price" value="any" checked><span class="custom-radio"></span><span>Any price</span></label>
+              <label class="filter-option"><input type="radio" name="price" value="free"><span class="custom-radio"></span><span>Free</span></label>
+              <label class="filter-option"><input type="radio" name="price" value="paid"><span class="custom-radio"></span><span>Paid</span></label>
+            </div>
+            <div class="filter-separator"></div>
+            <div class="filter-group">
+              <h3>Format</h3>
+              <label class="filter-option"><input type="checkbox" name="format" value="CSV"><span class="custom-check"></span><span>CSV</span></label>
+              <label class="filter-option"><input type="checkbox" name="format" value="JSON"><span class="custom-check"></span><span>JSON</span></label>
+              <label class="filter-option"><input type="checkbox" name="format" value="GeoJSON"><span class="custom-check"></span><span>GeoJSON</span></label>
+            </div>
+            <div class="privacy-note"><span class="privacy-icon">✳</span><span><b>Built on trust</b><small>Every dataset has a clear license and provenance.</small></span></div>
+          </aside>
+
+          <div class="results">
+            <div class="results-meta"><span id="results-count">Showing 6 thoughtfully sourced datasets</span><button type="button" id="mobile-filter-button" class="mobile-filter">☷ Filters</button></div>
+            <div class="dataset-grid" id="dataset-grid" aria-live="polite"></div>
+            <div class="empty-state" id="empty-state" hidden>
+              <span class="empty-icon">⌕</span>
+              <h3>No datasets found</h3>
+              <p>Try changing your search or clearing a filter.</p>
+              <button type="button" class="button button-outline" id="empty-clear">Clear filters</button>
+            </div>
+            <button class="load-more" id="load-more" type="button">Explore all datasets <span>↗</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works">
+        <div class="how-intro">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE MORE CONTEXT</div>
+          <h2>Data should come<br>with a <span>story.</span></h2>
+          <p>Know where it came from, how it was gathered, and what you can do with it. That's the Fieldnotes way.</p>
+          <button class="button button-dark" id="how-sell-button" type="button">Share your work <span>↗</span></button>
+        </div>
+        <div class="how-steps">
+          <article class="how-step"><span class="step-number">01</span><div><h3>Find the right fit</h3><p>Explore independent data with clear descriptions, formats, and licenses.</p></div><span class="step-arrow">↗</span></article>
+          <article class="how-step"><span class="step-number">02</span><div><h3>Understand the source</h3><p>Every listing explains who collected it and how it can be used.</p></div><span class="step-arrow">↗</span></article>
+          <article class="how-step"><span class="step-number">03</span><div><h3>Support the makers</h3><p>Buy directly from data creators or start with a free collection.</p></div><span class="step-arrow">↗</span></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>fieldnotes<span class="brand-period">.</span></span></a><span>Thoughtful data, shared openly.</span><span>© 2025 Fieldnotes Marketplace</span></footer>
+
+    <dialog id="detail-dialog" class="app-dialog">
+      <button class="dialog-close" type="button" aria-label="Close dialog">×</button>
+      <div id="detail-content"></div>
+    </dialog>
+    <dialog id="sell-dialog" class="app-dialog sell-dialog">
+      <button class="dialog-close" type="button" aria-label="Close dialog">×</button>
+      <div class="dialog-eyebrow">FOR DATA MAKERS</div>
+      <h2>Share what<br>you've <span>found.</span></h2>
+      <p class="dialog-lede">Tell us a little about your dataset. This demo saves your listing in this page only.</p>
+      <form id="sell-form" class="sell-form">
+        <label>Dataset name<input name="title" required maxlength="70" placeholder="e.g. Native plants of the Pacific Northwest"></label>
+        <div class="form-row">
+          <label>Category<select name="category" required><option value="climate">Climate & nature</option><option value="culture">Culture & community</option><option value="cities">Cities & places</option><option value="business">Business & economy</option></select></label>
+          <label>Format<select name="format" required><option>CSV</option><option>JSON</option><option>GeoJSON</option></select></label>
+        </div>
+        <label>Short description<textarea name="description" required maxlength="180" rows="3" placeholder="What does it cover, and how was it collected?"></textarea></label>
+        <div class="form-row">
+          <label>Price (USD)<input name="price" type="number" min="0" step="1" value="0" required></label>
+          <label>License<select name="license" required><option>CC BY 4.0</option><option>CC0</option><option>Open Data Commons</option></select></label>
+        </div>
+        <label class="privacy-consent"><input name="privacy" type="checkbox" required><span>I confirm this dataset does not contain personal or sensitive information and I have the rights to share it.</span></label>
+        <button class="button button-dark form-submit" type="submit">Preview listing <span>↗</span></button>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
